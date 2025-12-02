@@ -5,15 +5,15 @@ const Allocator = std.mem.Allocator;
 // declaratively construct a build graph that will be executed by an external
 // runner.
 pub fn build(b: *std.Build) void {
-    // var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-    // const allocator = gpa.allocator();
-    // defer {
-    //     const deinit_status = gpa.deinit();
-    //     if (deinit_status == .leak) std.debug.print("Memory leak detected\n", .{});
-    // }
-    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
-    defer arena.deinit();
-    const allocator = arena.allocator();
+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+    const allocator = gpa.allocator();
+    defer {
+        const deinit_status = gpa.deinit();
+        if (deinit_status == .leak) std.debug.print("Memory leak detected\n", .{});
+    }
+    // var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    // defer arena.deinit();
+    // const allocator = arena.allocator();
     generateDaysFile(allocator, "./src") catch {};
     // Standard target options allows the person running `zig build` to choose
     // what target to build for. Here we do not override the defaults, which
