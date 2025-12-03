@@ -50,13 +50,13 @@ const std = @import("std");
 // const d24p2 = @import("day24/part2.zig");
 // const d25p1 = @import("day25/part1.zig");
 
-const day = @import("day2/day.zig");
+const day = @import("day3/day.zig");
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa.deinit();
     const allocator = gpa.allocator();
-    const path = "in/day2.txt";
+    const path = "in/day3.txt";
 
     // try d17p2.main(allocator, path);
 
