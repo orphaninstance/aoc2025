@@ -12,9 +12,9 @@ pub fn part2(ctx: *Context) ![]const u8 {
     // Copy and sort ranges by start, then end
     var ranges = try ctx.allocator.alloc(Range, ctx.ranges.len);
     defer ctx.allocator.free(ranges);
-    std.mem.copyForwards(Range, ranges, ctx.ranges);
+    @memcpy(ranges, ctx.ranges);
     std.mem.sort(Range, ranges, {}, struct {
-        fn less(_: void, a: @TypeOf(ctx.ranges[0]), b: @TypeOf(ctx.ranges[0])) bool {
+        fn less(_: void, a: Range, b: Range) bool {
             if (a.start == b.start) return a.end < b.end;
             return a.start < b.start;
         }
