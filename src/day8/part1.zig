@@ -146,7 +146,7 @@ fn largestThreeConnectedSizes(allocator: std.mem.Allocator, g: Graph) ![3]usize 
     return out;
 }
 
-    // Helper to get undirected neighbors (union of out and in)
+// Helper to get undirected neighbors (union of out and in)
 fn neighborsUnion(g: Graph, h: u64, alloc: std.mem.Allocator) !std.ArrayList(u64) {
     var neigh = try std.ArrayList(u64).initCapacity(alloc, 0);
     // add out-neighbors
