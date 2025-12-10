@@ -51,7 +51,7 @@ Cowboy beans
 ### Dessert
 
 Apple Pie Cobbler
-- applie pie filling, 20 oz.
+- apple pie filling, 20 oz.
 - yellow cake mix, 1 box
 - butter 8 tbsp
 - 1 can 7-up
@@ -66,4 +66,5 @@ Overnight Oats
 ## Snacks
 
 Granola
+
 ???
