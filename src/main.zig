@@ -56,7 +56,7 @@ pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa.deinit();
     const allocator = gpa.allocator();
-    const path = "in/day9-example.txt";
+    const path = "in/day9.txt";
 
     // try d17p2.main(allocator, path);
 
